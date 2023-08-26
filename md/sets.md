@@ -11,15 +11,18 @@ Interestingly, sets are able to exceed at being able to determine whether it is 
 ## Hashing
 Hashing is a process that has a lot of different applications in technology today, including the fields of cybersecurity and database management. While its actual implementation details may differ based on the application, hashing always provides a means by which information can be broken down into smaller bits of information that's completely unique and easily retrievable. 
 
-In Python, hashing is used to convert and map data into a **hash table.** 
+In Python, hashing is used to convert and map set elements into a **hash table.** 
 
 ### Hash Tables
-Hash tables provide a way for data to be stored as unique key-value pairs. are essentially built by entering any valid input into a hash function, which then breaks it down into a new value. That value becomes the input value's key, which is a unique identifier. 
+A hash table stores each element from a set in the form of a unique key-value pair. In Python, every pair is created by passing the value of an element into a built-in **hash function.** Every value, no matter its initial data type, will be converted into an integer that becomes the value's key. 
+
+![Chart displaying the steps of the hashing process](../images/hashing_process.jpg)
+
+**Non-hashable elements include:**
+
 
 This kind of key-value pair differs from key-value pairs found in dictionaries because not just any value can be selected as a key in 
 sets (especially )
-
-![Chart displaying the steps of the hashing process](../images/hashing_process.jpg)
 
 &nbsp;
 ## Characteristics 
