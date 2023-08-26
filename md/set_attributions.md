@@ -14,8 +14,8 @@ https://realpython.com/python-sets/
 
 ## Images
 
-### Hashing Process
+### The Hashing Process:
 https://afteracademy.com/blog/the-concept-of-hashing-in-programming/ 
 
-### Where's Waldo Image
+### Where's Waldo Image:
 This image can be found [in this fastcompany.com article](https://www.fastcompany.com/40552403/wheres-waldo-in-google-maps-and-heres-how-he-got-there)

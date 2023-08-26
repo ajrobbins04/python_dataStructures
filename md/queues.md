@@ -1,4 +1,4 @@
-![Cartoon image of people standing in a waiting queue](images/queue_intro.webp)
+![Cartoon image of people standing in a waiting queue](../images/queue_intro.webp)
 
 # Queues
 
@@ -8,7 +8,7 @@ advanced to the very front (head) of the queue.
 
 **Thus, the order that data leaves a queue will be the same order in which it entered the queue.**
 
-
+&nbsp;
 ## Queues in the Real World
 Compared to other data structures, a queue's behavior is relatively simple and easy to
 understand from a real-world perspective. When data enters a queue, it is just taking its
@@ -17,7 +17,7 @@ obvious difference is that data is perfectly patient when waiting its turn (whic
 from what transpires at the DMV), so data never tries to "cut" when waiting its turn to exit
 the queue, nor does it try to leave the queue early.
 
-
+ &nbsp;
 ## Queues in Technology
 Technology utilizes queues extensively. Queues provide structure and order when automated tasks 
 must be carried out, and they provide a way for resources to be shared without overwhelming 
@@ -25,13 +25,13 @@ and crashing a system.
 
 ### Printer Queues
 Way back when printers were prohibitively expensive, it was common practice for many users
-to all share the same printer. The printer would end up receive tons of print job requests,
+to all share the same printer. The printer would end up receiving tons of print job requests,
 so it would organize these requests into a queue to methodically print every request.
 
-![Illustration depicting how a printer queue works](images/printer_queue.png)
+![Illustration depicting how a printer queue works](../images/printer_queue.png)
 Personal printers may be much easier to purchase nowadays, but it still accomplishes all its
 printing tasks by starting with the request that was received first, then the second request,
-the third request, and so on.
+followed by the third request, and so on.
 
 **Additional Examples of Queues Include:**
 * **CPU scheduling**, in which the operating system determines which process will be 
@@ -43,22 +43,21 @@ next based on how long they've been in the waiting queue.
 * **Websites**, which can't handle all HTTP requests at once. It serves each request using 
 queues, which helps ensure that website response times aren't sluggish.
 
-
-## How Queues Work
+&nbsp;
+## Queue Implementation
 Queues can be implemented in many different coding languages in addition to Python, including 
-C, C++, and Java. Even though the actual implementation details vary based on which coding  
-language is being used, the set of operations associated with queues will remain the same.
+C, C++, and Java. Even though the actual implementation details vary based on which coding language is being used, the set of operations associated with queues will remain the same.
 
 In Python, queues are **implemented using lists**:
 
-![example of a queue object in Python being instantiated using a list](images/queue_instantiate.png)
+![example of a queue object in Python being instantiated using a list](../images/queue_instantiate.png)
 
 Lists in Python are **dynamic arrays**.
 
 This means a queue's data will be stored in memory addresses that are contiguous to each other. This will play a large role in determining the
 performance level of each operation.
 
-
+&nbsp;
 ### Operations:
 
 #### enqueue(element_value)
@@ -68,7 +67,7 @@ performance level of each operation.
     * The input size does not affect the amount of time taken to execute 
     enqueue. Appending to the tail always occurs in one step.
 
-![example of an enqueue operation implemented in Python](images/queue_enqueue.png)
+![example of an enqueue operation implemented in Python](../images/queue_enqueue.png)
 
 #### dequeue()
 * Removes an element from the front of the queue. 
@@ -78,15 +77,14 @@ performance level of each operation.
     other elements move up the queue by one index value closer to the front.
     * Every element must be iterated through to perform this shift.
 
-![example of 2 dequeue operation approaches implemented in Python](images/queue_dequeue-2.png)
+![example of 2 dequeue operation approaches implemented in Python](../images/queue_dequeue-2.png)
 
-###### deque - A More Efficient Alternative
+#### deque (a quick sidenote)
+* The more efficient alternative to dequeue.
 * Stands for "double-ended queue".
 * Deque is a Python library that implements queues using linked lists instead of lists
 that are dynamic arrays.
-* Using linked lists makes operations like dequeue more efficient because there is no
-huge shift of all the elements after dequeue when they aren't located in contiguous 
-memory addresses.
+* By using linked lists, operations like dequeue become more efficient because there is no huge shift of all the elements after dequeue when they aren't located in contiguous memory addresses.
 
 #### size()
 * Provides the queue's size.
@@ -94,7 +92,7 @@ memory addresses.
 * Performance Level: **O(1)**
     * len() does not require a loop to count up the size of a list.
 
-![example of the size operation implemented in Python](images/queue_size.png)
+![example of the size operation implemented in Python](../images/queue_size.png)
 
 #### is_empty()
 * Checks if the queue has no elements. 
@@ -103,41 +101,13 @@ returns True whenever the size is 0.
 * Performance Level: **O(1)**
     * len() does not require a loop to count up the size of a list.
 
-![example of the is_empty operation implemented in Python](images/queue_is_empty.png)
+![example of the is_empty operation implemented in Python](../images/queue_is_empty.png)
 
 
 The examples for all these operations can be used together to create a simple,
 functional queue class - as shown [here](python/queue-class.py) 
 
-#### The bonus method: print_queue()
-Even though there is no queue operation that prints queues, it is still defined
-inside the queue class shared above because it can come in handy when checking
-that the Queue class works properly.
-
 ```python
-class Queue:
-    def print_queue(self):
-        """
-        Display all the element values in the queue.
-        """
-        
-        # Check if the queue is empty
-        if self.is_empty():
-            print("The queue is empty.")
-        else:
-            # Find the final index value so the last element
-            # can be printed without a comma after it.
-            size = self.size()
-            maxIndex = size - 1
-          
-            # Print each value found in the queue
-            for element in self.queue:
-                if element != self.queue[maxIndex]:
-                    print(element, end=", ")
-
-                # Print last value
-                else:
-                    print(element)
                 
 ########################################
 # Check that the queue operations
@@ -176,6 +146,7 @@ my_queue.print_queue()
         
 ```
 
+&nbsp;
 ## Example: Movie Ticket Queue
 This example depicts a line to buy tickets at a movie
 theater. Each person in line must wait their turn to 
@@ -379,7 +350,7 @@ The current line order:
 Loren just bought 2 tickets.
 The line is now empty.
 
-
+&nbsp;
 ## Digging Deeper: Queues vs. Stacks 
 One of the interesting things about queues is that it has a sibling data structure, so to
 speak, called stacks. Stacks, like queues, are implemented in Python using lists.
@@ -411,6 +382,7 @@ define a queue. Likewise, only being able to add and remove data from the tail i
 a stack. So, once a queue or a stack class breaks out of their defined behaviors, then they aren't
 necessarily considered queues or stacks any more.
 
+&nbsp;
 ## Final Problem to Solve: Library Book Waitlist Queue
 To practice using a queue in a program, try designing a waitlist queue for a library
 system. This program is just a simplified version, so it doesn't need to take all 
