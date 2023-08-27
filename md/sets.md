@@ -26,29 +26,47 @@ Hashing makes it possible to instantaneouly locate an element's index, so elemen
 
 &nbsp;
 ## Set Implementation
-An set can be created using **curly braces:**
+A populated set can be created using **curly braces:**
 
 ```python
-    new_set = {'a', 'e', 'i', 'o', 'u'}
+    colors = {'red', 'green', 'blue'}
 ```
 
-Or, an empty set can be created using Python's **built-in set() function:** 
+Or, a set can be created using Python's **built-in set() function:** 
 
 ```python
-    new_set = set()
+    sports = set('soccer', 'volleyball', 'football')
+```
+
+The set() function **must be used when creating an empty set**. A
+set of empty curly brackets will create a dict instead:
+```python
+    emptyDict = {}
+    emptySet = set()
+
+    print(type(emptyDict)) # <class 'dict'>
+    print(type(emptySet))  # <class 'set'>
 ```
 
 Keep in mind that these two methods are **not one in the same:**
 * Curly braces accept objects as arguments, so the input is left as is.
+    ```python
+    new_set = {<obj>, <obj>, ..., <obj>}
+    ```
 * set() accepts iterables as arguments, so it will break up the input, 
 thereby creating a list of elements to put in the set.
+    ```python
+    new_set = set(<iter>)
+    ```
 
+Thus, identical arguments will produce different results based
+on the implementation method used:
 ```python
-    set_object = {'abc'}    
-    set_iterable = set('abc') 
+    obj_argument = {'abc'}    
+    iter_argument = set('abc') 
 
-    print(set_object)   # {'abc'}
-    print(set_iterable) # {'a', 'b', 'c'}
+    print(obj_argument)   # {'abc'}
+    print(iter_argument)  # {'a', 'b', 'c'}
 ```
 
 &nbsp;
@@ -82,6 +100,57 @@ run) will influence the hash code.
 
 ## Operations 
 
+  operation   |     description     |  performance
+------------- | ------------------- | -------------
+add(value)    | "value" is added to |  O(1)
+              | the set             |
+              |                     |
+remove(value) | "value" is removed  |  O(1)
+              | from the set        |
+              |                     |
+member(value) | indicates whether   |  O(1)
+              | "value" is or isn't |
+              | in the set          |
+              |                     |
+size          | returns  the total  |  O(1)
+              | number of elements  |
+              | in the set          |
+              |                     |
+
+```python
+# Creating a set
+fruits = {'apple', 'banana', 'orange', 'grape', 'kiwi'}
+
+# Display the initial set
+print("Initial set:", fruits)
+
+# Adding an element to the set
+fruits.add('pear')
+print("After adding 'pear':", fruits)
+
+# Removing an element from the set
+fruits.remove('banana')
+print("After removing 'banana':", fruits)
+
+# Checking membership
+print("'kiwi' in fruits:", 'kiwi' in fruits)
+print("'banana' in fruits:", 'banana' in fruits)
+
+# Creating another set for set operations
+citrus_fruits = {'orange', 'lemon', 'lime'}
+
+# Union of sets
+all_fruits = fruits.union(citrus_fruits)
+print("Union of sets:", all_fruits)
+
+# Intersection of sets
+common_fruits = fruits.intersection(citrus_fruits)
+print("Intersection of sets:", common_fruits)
+
+# Difference of sets
+non_citrus_fruits = fruits.difference(citrus_fruits)
+print("Difference of sets:", non_citrus_fruits)
+```
 ### add(value)
 
 
