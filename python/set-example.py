@@ -1,34 +1,22 @@
 """input = ['not', 'hashable']
 hash(input)"""
-# Creates a set using string objects as arguments
-fruits = {'apple', 'banana', 'orange', 'grape', 'kiwi'}
+# Create a set containing sports
+sports = {'soccer', 'basketball', 'tennis', 'swimming', 'cycling'}
 
+# Create a set containing sports played as a team
+team_sports = {'soccer', 'basketball', 'volleyball', 'hockey'}
 
-print("Initial set:", fruits)
+# Combine all unique elements from sports and
+# team_sports into one set
+all_sports = sports.union(team_sports)
 
-# Adding an element to the set
-fruits.add('pear')
-print("After adding 'pear':", fruits)
+print("Union of sets:", all_sports)
 
-# Removing an element from the set
-fruits.remove('banana')
-print("After removing 'banana':", fruits)
-
-# Checking membership
-print("'kiwi' in fruits:", 'kiwi' in fruits)
-print("'banana' in fruits:", 'banana' in fruits)
-
-# Creating another set for set operations
-citrus_fruits = {'orange', 'lemon', 'lime'}
-
-# Union of sets
-all_fruits = fruits.union(citrus_fruits)
-print("Union of sets:", all_fruits)
-
-# Intersection of sets
-common_fruits = fruits.intersection(citrus_fruits)
-print("Intersection of sets:", common_fruits)
+# Combine all shared elements from sports and
+# team_sports into one set
+common_sports = sports.intersection(team_sports)
+print("Intersection of sets:", common_sports)
 
 # Difference of sets
-non_citrus_fruits = fruits.difference(citrus_fruits)
-print("Difference of sets:", non_citrus_fruits)
+non_team_sports = sports.difference(team_sports)
+print("Difference of sets:", non_team_sports)

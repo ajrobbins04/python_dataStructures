@@ -103,13 +103,13 @@ location in memory (which also varies each time the program is
 run) will influence the hash code.
 
 &nbsp;
-## Basic Set Operations 
-  operation   |     description     |   performance
-------------- | ------------------- | ---------------
-add(value)    | "value" is added to<br>the set.  |  O(1)
-remove(value) | "value" is removed<br>from the set.  |  O(1)
-member(value) | Determines if "value"<br>is in the set.  |  O(1)
-size          | Returns the number<br>of set elements.  |  O(1)
+## Set Operations 
+  operation   |     description     |     example     |  performance
+------------- | ------------------- | --------------- | --------------
+add(value)    | "value" is added to<br>the set. | set.add(value) | O(1) -- Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
+remove(value) | "value" is removed<br>from the set. | set.remove(value) | O(1) -- Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
+member(value) | Determines if "value"<br>is in the set. | if value **in** set | O(1) -- Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
+size          | Returns the number<br>of set elements. | length = len(set) | O(1) -- Sets keep track of its<br>size internally. No iterations are necessary.
 
 ```python
 # Creates a set using string objects as arguments
@@ -137,25 +137,47 @@ print("'banana' in fruits:", 'banana' in fruits)   # 'banana' in fruits: False
 
 &nbsp;
 ## Mathematical Set Operations 
-  operation   |     description     |   performance
-------------- | ------------------- | ---------------
-union         | Combines two or more<br>sets into one.   | O(n) -- Every element in the smaller set<br>must be checked to ensure there are no<br>duplicate values in the new set.
-intersection  | Returns a set that only<br>contains elements shared<br>among two or more sets.   | O(n) -- Every element in the smaller set<br>must be checked to ensure that only the<br>shared elements are placed in the new set.      
-difference    | Combines two or more<br>sets into one.   | O(n)
+  operation   |     description     |     example     |  performance
+------------- | ------------------- | --------------- | --------------
+union         | Combines two or<br>more sets into one set. | set1.union(set2)<br>**or**<br>set1 \| set2 | O(n) -- Every element in the<br>smaller set must be checked to<br>ensure there are no duplicate values in the new set.
+intersection  | Returns a set that<br>only contains elements shared<br>among two or more sets. | set1.intersection(set2)<br>**or**<br>set1 & set2 | O(n) -- Every element in the<br>smaller set must be checked to<br>ensure that only the shared elements are placed in the new set.      
+difference    | Returns a set that<br>only contains the elements<br>that are in the first set, but not in the second set. | set1.difference(set2)<br>**or**<br>set1 - set2 | O(n) - Every element in the set being called on (i.e. set1) must be compared against the elements in the sets used as arguments (i.e. set2 ).
 
 ```python
-# Creating another set for set operations
-citrus_fruits = {'orange', 'lemon', 'lime'}
+# Create a set containing sports
+sports = {'soccer', 'basketball', 'tennis', 'swimming', 'cycling'}
 
-# Union of sets
-all_fruits = fruits.union(citrus_fruits)
-print("Union of sets:", all_fruits)
+# Create a set containing sports played as a team
+team_sports = {'soccer', 'basketball', 'volleyball', 'hockey'}
 
-# Intersection of sets
-common_fruits = fruits.intersection(citrus_fruits)
-print("Intersection of sets:", common_fruits)
+# Combine all unique elements from sports and
+# team_sports into one set
+all_sports = sports.union(team_sports)
 
-# Difference of sets
-non_citrus_fruits = fruits.difference(citrus_fruits)
-print("Difference of sets:", non_citrus_fruits)
+# Union of sets: {'volleyball', 'hockey', 'soccer', 'cycling', 'tennis', 'swimming', 'basketball'}
+print("Union of sets:", all_sports)
+
+# Combine all shared elements from sports and
+# team_sports into one set
+shared_sports = sports.intersection(team_sports)
+
+# Intersection of sets: {'soccer', 'basketball'}
+print("Intersection of sets:", shared_sports)
+
+# Create a set with elements that are unique 
+# to the sports set when compared with team_sports
+non_team_sports = sports.difference(team_sports)
+
+# Difference of sets: {'cycling', 'swimming', 'tennis'}
+print("Difference of sets:", non_team_sports)
+
 ```
+
+**Other mathematical set operations include:**
+* symmetric_difference
+* isdisjoint
+* issubset
+* issuperset
+
+&nbsp;
+## Modifying Set Operations
