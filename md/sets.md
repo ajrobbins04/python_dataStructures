@@ -9,15 +9,23 @@ Interestingly, sets are able to exceed at being able to determine whether it is 
 
 &nbsp;
 ## Hashing
-Hashing is a process that has a lot of different applications in technology today, including the fields of cybersecurity and database management. While its actual implementation details may differ based on the application, hashing always provides a means by which information can be broken down into smaller bits of information that's completely unique and easily retrievable. 
+Hashing is a powerful process that has a lot of different applications in technology today, including the fields of cybersecurity and database management. While its actual implementation details may differ based on the application, hashing always provides a means by which information can be broken down into smaller bits of information that's completely unique and easily retrievable.
 
-In Python, hashing is used to convert and map set elements into a **hash table.** 
+Hashing occurs when elements are either stored in, or retrieved from, a **hash table.**
 
 ### Hash Tables
-A hash table stores each element from a set in the form of a unique key-value pair. In Python, every pair is created by passing the value of an element into a built-in **hash function.** Every value, no matter its initial data type, will be converted into an integer that becomes the value's key. 
+A hash table is a kind of data structure that stores each element from a set as a unique key-value pair. The element's index in the table is computed using the hashing process. 
+
+During this process, the element's key is inputted into a **hash function** that computes **hash code**. The hash code is always an integer, even if the key is not, so it can be used to compute the element's index value within the table. 
+
+Hashing makes it possible to instantaneouly locate an element's index, making it possible to add, remove, and locate elements in O(1) time. 
+
+Every value, no matter its initial data type, will be computed into an integer that becomes the key. 
 
 ![Chart displaying the steps of the hashing process](../images/hashing_process.jpg)
 
+
+The power of hash tables is that the element's index in the hash table key is used to determine th
 **Non-hashable elements include:**
 
 
