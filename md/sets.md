@@ -104,12 +104,12 @@ run) will influence the hash code.
 
 &nbsp;
 ## Basic Set Operations 
-  operation   |     description     | performance
-------------- | ------------------- | -------------
-add(value)    | "value" is added to<br>the set. |  O(1)
+  operation   |     description     |   performance
+------------- | ------------------- | ---------------
+add(value)    | "value" is added to<br>the set.  |  O(1)
 remove(value) | "value" is removed<br>from the set.  |  O(1)
-member(value) | Determines if "value"<br>is in the set.   |  O(1)
-size          | Returns the number<br>of set elements.   |  O(1)
+member(value) | Determines if "value"<br>is in the set.  |  O(1)
+size          | Returns the number<br>of set elements.  |  O(1)
 
 ```python
 # Creates a set using string objects as arguments
@@ -137,8 +137,8 @@ print("'banana' in fruits:", 'banana' in fruits)   # 'banana' in fruits: False
 
 &nbsp;
 ## Mathematical Set Operations 
-  operation   |     description     | performance
-------------- | ------------------- | -------------
+  operation   |     description     |   performance
+------------- | ------------------- | ---------------
 union         | Combines two or more<br>sets into one.   | O(n) -- Every element in the smaller set<br>must be checked to ensure there are no<br>duplicate values in the new set.
 intersection  | Returns a set that only<br>contains elements shared<br>among two or more sets.   | O(n) -- Every element in the smaller set<br>must be checked to ensure that only the<br>shared elements are placed in the new set.      
 difference    | Combines two or more<br>sets into one.   | O(n)
