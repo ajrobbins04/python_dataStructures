@@ -72,7 +72,13 @@ with an element that shares the same hash code.
     print(set_duplicateObjects)   # {'TN', 'AK', 'NY', 'CO', 'NV'}
     print(set_duplicateIterables) # {'y', 'x', 'z'}
 ```
-
+Note that both sets are not alphabetically ordered because
+the value of each element does not affect its placement. The
+hash code corresponding to each element will determine its
+placement. In addition, the order of elements usually changes
+each time the program is run. Certain factors like an element's 
+location in memory (which also varies each time the program is
+run) will influence the hash code.
 
 ## Operations 
 
