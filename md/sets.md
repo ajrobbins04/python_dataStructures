@@ -62,8 +62,8 @@ thereby creating a list of elements to put in the set.
 Thus, identical arguments will produce different results based
 on the implementation method used:
 ```python
-    obj_argument = {'abc'}    
-    iter_argument = set('abc') 
+    obj_argument = {'abc'}     # Creates a set using 'abc' as an object
+    iter_argument = set('abc') # Creates a set using 'abc' as an iterable
 
     print(obj_argument)   # {'abc'}
     print(iter_argument)  # {'a', 'b', 'c'}
@@ -84,11 +84,15 @@ will not be added when it's intended index location is already occupied
 with an element that shares the same hash code.
 
 ```python
-    set_duplicateObjects = {'NV', 'AK', 'CO', 'TN', 'NV', 'NY'}      
+    # Declares a set with 2 copies of 'NV'
+    set_duplicateObjects = {'NV', 'AK', 'CO', 'TN', 'NV', 'NY'}    
+
+    # Declares a set with 3 copies of 'z'  
     set_duplicateIterables = set('zzyzx') 
 
-    print(set_duplicateObjects)   # {'TN', 'AK', 'NY', 'CO', 'NV'}
-    print(set_duplicateIterables) # {'y', 'x', 'z'}
+    # No duplicates included
+    print(set_duplicateObjects)    # {'TN', 'AK', 'NY', 'CO', 'NV'}
+    print(set_duplicateIterables)  # {'y', 'x', 'z'}
 ```
 Note that both sets are not alphabetically ordered because
 the value of each element does not affect its placement. The
@@ -98,44 +102,48 @@ each time the program is run. Certain factors like an element's
 location in memory (which also varies each time the program is
 run) will influence the hash code.
 
-## Operations 
-
-  operation   |     description     |  performance
+&nbsp;
+## Basic Set Operations 
+  operation   |     description     | performance
 ------------- | ------------------- | -------------
-add(value)    | "value" is added to |  O(1)
-              | the set             |
-              |                     |
-remove(value) | "value" is removed  |  O(1)
-              | from the set        |
-              |                     |
-member(value) | indicates whether   |  O(1)
-              | "value" is or isn't |
-              | in the set          |
-              |                     |
-size          | returns  the total  |  O(1)
-              | number of elements  |
-              | in the set          |
-              |                     |
+add(value)    | "value" is added to<br>the set. |  O(1)
+remove(value) | "value" is removed<br>from the set.  |  O(1)
+member(value) | Determines if "value"<br>is in the set.   |  O(1)
+size          | Returns the number<br>of set elements.   |  O(1)
 
 ```python
-# Creating a set
+# Creates a set using string objects as arguments
 fruits = {'apple', 'banana', 'orange', 'grape', 'kiwi'}
 
-# Display the initial set
-print("Initial set:", fruits)
+# Initial set: {'banana', 'grape', 'orange', 'apple', 'kiwi'}
+print("Initial set:", fruits) 
 
-# Adding an element to the set
+# Adds an element to the set
 fruits.add('pear')
+
+# After adding 'pear': {'banana', 'grape', 'orange', 'apple', 'pear', 'kiwi'}
 print("After adding 'pear':", fruits)
 
-# Removing an element from the set
+# Removes an element from the set
 fruits.remove('banana')
+
+# After removing 'banana': {'grape', 'orange', 'apple', 'pear', 'kiwi'}
 print("After removing 'banana':", fruits)
 
-# Checking membership
-print("'kiwi' in fruits:", 'kiwi' in fruits)
-print("'banana' in fruits:", 'banana' in fruits)
+# Check 'kiwi' & 'banana' for membership
+print("'kiwi' in fruits:", 'kiwi' in fruits)       # 'kiwi' in fruits: True
+print("'banana' in fruits:", 'banana' in fruits)   # 'banana' in fruits: False
+```
 
+&nbsp;
+## Mathematical Set Operations 
+  operation   |     description     | performance
+------------- | ------------------- | -------------
+union         | Combines two or more<br>sets into one.   | O(n) -- Every element in the smaller set<br>must be checked to ensure there are no<br>duplicate values in the new set.
+intersection  | Returns a set that only<br>contains elements shared<br>among two or more sets.   | O(n) -- Every element in the smaller set<br>must be checked to ensure that only the<br>shared elements are placed in the new set.      
+difference    | Combines two or more<br>sets into one.   | O(n)
+
+```python
 # Creating another set for set operations
 citrus_fruits = {'orange', 'lemon', 'lime'}
 
@@ -151,15 +159,3 @@ print("Intersection of sets:", common_fruits)
 non_citrus_fruits = fruits.difference(citrus_fruits)
 print("Difference of sets:", non_citrus_fruits)
 ```
-### add(value)
-
-
-### remove(value)
-
-
-### member(value)
-
-
-### size()
-
-in is a Python operation that can check if an element is part of an iterable
