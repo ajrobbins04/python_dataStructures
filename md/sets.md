@@ -11,32 +11,18 @@ Interestingly, sets are able to exceed at being able to determine whether it is 
 ## Hashing
 Hashing is a powerful process that has a lot of different applications in technology today, including the fields of cybersecurity and database management. While its actual implementation details may differ based on the application, hashing always provides a means by which information can be broken down into smaller bits of information that's completely unique and easily retrievable.
 
-Hashing occurs when elements are either stored in, or retrieved from, a **hash table.**
+Hashing occurs when elements are either stored in or retrieved from a **hash table.**
 
 ### Hash Tables
 A hash table is a kind of data structure that stores each element from a set as a unique key-value pair. The element's index in the table is computed using the hashing process. 
 
 During this process, the element's key is inputted into a **hash function** that computes **hash code**. The hash code is always an integer, even if the key is not, so it can be used to compute the element's index value within the table. 
 
-Hashing makes it possible to instantaneouly locate an element's index, making it possible to add, remove, and locate elements in O(1) time. 
-
-Every value, no matter its initial data type, will be computed into an integer that becomes the key. 
+Hashing makes it possible to instantaneouly locate an element's index, so elements can be added, removed, and retrieved in O(1) time. 
 
 ![Chart displaying the steps of the hashing process](../images/hashing_process.jpg)
 
-
-The power of hash tables is that the element's index in the hash table key is used to determine th
 **Non-hashable elements include:**
-
-
-This kind of key-value pair differs from key-value pairs found in dictionaries because not just any value can be selected as a key in 
-sets (especially )
-
-&nbsp;
-## Characteristics 
-* Not stored in any particular order.
-* All elements must be unique.
-* Sets can be changed, but only immutable types of elements may be stored in a set.
 
 &nbsp;
 ## Set Implementation
@@ -58,21 +44,47 @@ Keep in mind that these two methods are **not one in the same:**
 thereby creating a list of elements to put in the set.
 
 ```python
-    set_as_is = {'abc'}  # this set contains {'abc'}
-    set_new_list = set('abc') # this set contains {'a', 'b', 'c'}
+    set_object = {'abc'}    
+    set_iterable = set('abc') 
+
+    print(set_object)   # {'abc'}
+    print(set_iterable) # {'a', 'b', 'c'}
 ```
 
-### Operations 
-
-#### add(value)
-
-
-#### remove(value)
-
-
-#### member(value)
+&nbsp;
+## Characteristics 
+* Elements are not stored in any particular order.
+* All elements must be unique.
+* Sets can be changed, but only immutable data types may be stored in a set.
 
 
-#### size()
+### Removing Duplicates
+All elements in a set must be unique because the hash code created
+by two duplicate keys will also be the same. Thus, only the first
+element to be hashed will be placed in the hash table. The second element
+will not be added when it's intended index location is already occupied
+with an element that shares the same hash code.
+
+```python
+    set_duplicateObjects = {'NV', 'AK', 'CO', 'TN', 'NV', 'NY'}      
+    set_duplicateIterables = set('zzyzx') 
+
+    print(set_duplicateObjects)   # {'TN', 'AK', 'NY', 'CO', 'NV'}
+    print(set_duplicateIterables) # {'y', 'x', 'z'}
+```
+
+
+## Operations 
+
+### add(value)
+
+
+### remove(value)
+
+
+### member(value)
+
+
+### size()
 
 in is a Python operation that can check if an element is part of an iterable
