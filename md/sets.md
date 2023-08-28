@@ -131,10 +131,10 @@ run) will influence the hash code.
 ## Set Operations 
   operation   |     description     |     example     |  performance
 ------------- | ------------------- | --------------- | --------------
-add(value)    | "value" is added to<br>the set. | set.add(value) | O(1) -- Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
-remove(value) | "value" is removed<br>from the set. | set.remove(value) | O(1) -- Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
-member(value) | Determines if "value"<br>is in the set. | if value **in** set | O(1) -- Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
-size          | Returns the number<br>of set elements. | length = len(set) | O(1) -- Sets keep track of its<br>size internally. No iterations are necessary.
+add(value)    | "value" is added to<br>the set. | set.add(value) | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
+remove(value) | "value" is removed<br>from the set. | set.remove(value) | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
+member(value) | Determines if "value"<br>is in the set. | if value **in** set | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
+size          | Returns the number<br>of set elements. | length = len(set) | O(1) - Sets keep track of its<br>size internally. No iterations are necessary.
 
 ```python
 # Creates a set using string objects as arguments
@@ -174,9 +174,9 @@ such as add and remove exemplify that **sets themselves can be modified.**
 ## Set Mathematical Operations 
   operation   |     description     |     example     |  performance
 ------------- | ------------------- | --------------- | --------------
-union         | Combines two or<br>more sets into one set. | set1.union(set2)<br>**or**<br>set1 \| set2 | O(n) -- Every element in the<br>smaller set must be checked to<br>ensure there are no duplicate values in the new set.
-intersection  | Returns a set that<br>only contains elements shared<br>among two or more sets. | set1.intersection(set2)<br>**or**<br>set1 & set2 | O(n) -- Every element in the<br>smaller set must be checked to<br>ensure that only the shared elements are placed in the new set.      
-difference    | Returns a set that<br>only contains the elements<br>that are in the first set, but not in the second set. | set1.difference(set2)<br>**or**<br>set1 - set2 | O(n) - Every element in the set being called on (i.e. set1) must be compared against the elements in the sets used as arguments (i.e. set2 ).
+union         | Combines two or<br>more sets into one set. | set1.union(set2)<br>*or*<br>set1 \| set2 | O(n) - Every element in the<br>smaller set must be checked to<br>ensure there are no duplicate values in the new set.
+intersection  | Returns a set that<br>only contains elements shared<br>among two or more sets. | set1.intersection(set2)<br>*or*<br>set1 & set2 | O(n) - Every element in the<br>smaller set must be checked to<br>ensure that only the shared elements are placed in the new set.      
+difference    | Returns a set that<br>only contains the elements<br>that are in the first set, but not in the second set. | set1.difference(set2)<br>*or*<br>set1 - set2 | O(n) - Every element in the set being called on (i.e. set1) must be compared against the elements in the sets used as arguments (i.e. set2 ).
 
 ```python
 # Create a set containing sports

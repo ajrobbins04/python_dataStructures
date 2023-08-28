@@ -56,56 +56,94 @@ This means a queue's data will be stored in memory addresses that are contiguous
 performance level of each operation.
 
 &nbsp;
-### Operations:
-
-#### enqueue(element_value)
-* Adds a new element to the back of the queue. 
-* Is implemented using the append() list method.
-* Performance Level: **O(1)** 
-    * The input size does not affect the amount of time taken to execute 
-    enqueue. Appending to the tail always occurs in one step.
-
-![example of an enqueue operation implemented in Python](../images/queue_enqueue.png)
-
-#### dequeue()
-* Removes an element from the front of the queue. 
-* Can be implemented using either the pop() list method or the del operator.
-* Performance Level: **O(n)**
-    * Removing the element at index 0 will result in a shift where all the 
-    other elements move up the queue by one index value closer to the front.
-    * Every element must be iterated through to perform this shift.
-
-![example of 2 dequeue operation approaches implemented in Python](../images/queue_dequeue-2.png)
-
-#### deque (a quick sidenote)
-* The more efficient alternative to dequeue.
-* Stands for "double-ended queue".
-* Deque is a Python library that implements queues using linked lists instead of lists
-that are dynamic arrays.
-* By using linked lists, operations like dequeue become more efficient because there is no huge shift of all the elements after dequeue when they aren't located in contiguous memory addresses.
-
-#### size()
-* Provides the queue's size.
-* Is implemented using the len() list method.
-* Performance Level: **O(1)**
-    * len() does not require a loop to count up the size of a list.
-
-![example of the size operation implemented in Python](../images/queue_size.png)
-
-#### is_empty()
-* Checks if the queue has no elements. 
-* The len() method is used to get the queue's size, and is_empty()
-returns True whenever the size is 0.
-* Performance Level: **O(1)**
-    * len() does not require a loop to count up the size of a list.
-
-![example of the is_empty operation implemented in Python](../images/queue_is_empty.png)
-
-
-The examples for all these operations can be used together to create a simple,
-functional queue class - as shown [here](python/queue-class.py) 
+## Queue Operations 
+  operation    |     description     |     example in<br>Python     |  performance
+-------------- | ------------------- | --------------- | --------------
+enqueue(value) | "value" is added to the back of the queue<br>(the queue's tail). | queue.append(value) | O(1) - Appending to the back of the queue always occurs in constant time.
+dequeue        | Removes and returns the value at the front of the queue<br>(the queue's head). | value = queue[0]<br>del queue[0]<br>*or*<br>value = queue.pop(0) | O(n) - Removing the value at index 0 results in a shift in which all elements move up the queue by one index value. Every element must be iterated through to perform this shift.
+size           | Returns the number of elements in the queue. | length = len(queue) | O(1) - Queues keep track of its<br>size internally. No iterations are necessary when len() is called.
+is_empty       | Checks if the queue is empty. | if len(queue) == 0: | O(1) - Queues keep track of its<br>size internally. No iterations are necessary when len() is called.
 
 ```python
+"""
+Implements a simple queue class using the 4 
+aforementioned queue operations (enqueue, 
+dequeue, size, is_empty), and print_queue.
+"""
+class Queue:
+    
+    def __init__(self):
+        """ 
+        Create a new queue object that's empty (for now).
+        """
+        self.queue = []
+
+    def size(self):
+        """
+        Returns the size of the queue object. Retrieving
+        the size has an O(1) performance level.
+        """
+        return len(self.queue)
+        
+    
+    def is_empty(self):
+        """
+        Returns True when the queue is empty of any values.
+        This operation has an O(1) performance level.
+        """
+        if len(self.queue) > 0:
+            return False
+        
+        return True
+
+    def enqueue(self, element_value):
+        """
+        Adds the value of a new queue element to the very
+        back of the queue. Enqueue has an O(1) performance
+        level.
+        """
+        self.queue.append(element_value)
+
+    def dequeue(self):
+        """
+        Per its "First In, First Out" behavior, the
+        element value that's at the very front of the queue 
+        gets removed by dequeue. The queue stores its values
+        in a dynamic array, which gives it O(n) performance.
+        """
+
+        # Check if the queue is empty
+        if self.is_empty():
+            print("The queue is empty.")
+            return None
+        
+        # Remove the element from the queue,
+        # and return its value
+        value = self.queue.pop(0)
+        return value
+         
+    def print_queue(self):
+        """
+        Display all the element values in the queue.
+        """
+        # Check if the queue is empty
+        if self.is_empty():
+            print("The queue is empty.")
+        else:
+            # Find the final index value so the last element
+            # can be printed without a comma after it.
+            size = self.size()
+            maxIndex = size - 1
+          
+            # Print each value found in the queue
+            for element in self.queue:
+                if element != self.queue[maxIndex]:
+                    print(element, end=", ")
+
+                # Print last value
+                else:
+                    print(element)
+
                 
 ########################################
 # Check that the queue operations
@@ -143,6 +181,10 @@ my_queue.enqueue("second")
 my_queue.print_queue()
         
 ```
+
+Note that **deque** (pronounced as *"deck"*) serves as a **more efficient alternative** to the dequeue operation. It is a Python library that implements queues using linked lists instead of lists based on dynamic arrays.
+
+Deque stands for "double-ended queue" because it can add and remove elements efficiently from the queue's head *and* its tail. By using linked lists, operations like dequeue become more efficient because there is no shifting of elements located in contiguous memory addresses.
 
 &nbsp;
 ## Example: Movie Ticket Queue
