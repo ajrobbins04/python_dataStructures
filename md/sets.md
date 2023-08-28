@@ -1,30 +1,43 @@
 ![Image of Waldo from "Where's Waldo"](../images/sets_intro.jpg)
 
 # Sets
-For the record, sets really would be the data structure that crushes the competition in "Where's Waldo". But, Sets are more properly characterized in technology as the data structure that's great at determing membership.
- 
-Interestingly, sets are able to exceed at being able to determine whether it is storing a particular data value, even though it never attempts to sort its incoming data.  
-
-**Sets are highly efficient at sorting due to hashing.**
+The set data structure is renowned for its highly efficient membership determination. Sets can ascertain 
+whether they contain a specific element without needing to iterate through its data. What makes sets even
+more remarkable is that they do not attempt to sort any incoming data at face value. Instead, a set manages 
+to keep track of all its elements using a technique called hashing.
 
 &nbsp;
 ## Hashing
-Hashing is a powerful process that has a lot of different applications in technology today, including the fields of cybersecurity and database management. While its actual implementation details may differ based on the application, hashing always provides a means by which information can be broken down into smaller bits of information that's completely unique and easily retrievable.
+Hashing is a powerful process that has a lot of different applications in technology today, including the 
+fields of cybersecurity and database management. While its actual implementation details may differ based 
+on the application, hashing always provides a means by which information can be broken down into smaller 
+bits of information that's completely unique and easily retrievable.
 
-Hashing occurs when elements are either stored in or retrieved from a **hash table.**
+Hashing comes into play when elements are stored in or retrieved from a **hash table.**
 
 ### Hash Tables
-A hash table is a kind of data structure that stores each element from a set as a unique key-value pair. The element's index in the table is computed using the hashing process. 
+A hash table is a kind of data structure that stores each element from a set as a unique key-value pair. 
+The element's index in the table is computed using the hashing process. 
 
-During this process, the element's key is inputted into a **hash function** that computes **hash code**. The hash code is always an integer, even if the key is not, so it can be used to compute the element's index value within the table. 
+In this process, an element's key is fed into a **hash function** that returns **hash code**. Notably, the 
+hash code is always an integer, even if the original key is not. This hash code is then used to compute the 
+element's index value within the table. 
 
-Hashing makes it possible to instantaneouly locate an element's index, so elements can be added, removed, and retrieved in O(1) time. 
+Hashing makes it possible to instantaneouly locate an element's index, so elements can be added, removed, 
+and retrieved in constant O(1) time. 
 
 ![Chart displaying the steps of the hashing process](../images/hashing_process.jpg)
 
+### A Simple Example
+
+### Collisions
+
 ### Hashable Elements
 An element is hashable if Python's hash() function can be called on it.
-Hashing can only be used on elements that are **immutable**, which cannot be modified after being defined. This is because any modification to an element will change its hash code, and thus its position in the hash table. This would inevitably lead to element collisions, and any attempt at conflict resolution would be null and void as other collisions are bound to occur as more changes are made.
+Hashing can only be used on elements that are **immutable**, which cannot be modified after being defined. 
+This is because any modification to an element will change its hash code, and thus its position in the hash 
+table. This would inevitably lead to element collisions, and any attempt at conflict resolution would be 
+null and void as other collisions are bound to occur as more changes are made.
 
 **Immutable (and thus hashable) elements include:**
 * integers
@@ -32,7 +45,9 @@ Hashing can only be used on elements that are **immutable**, which cannot be mod
 * tuples
 * booleans
 
-**Lists and dictionaries are both non-hashable.**
+**Non-hashable elements include:**
+* lists
+* dictionaries
 
 &nbsp;
 ## Set Implementation
@@ -83,9 +98,10 @@ on the implementation method used:
 ## Characteristics 
 * All elements must be unique.
 * Elements are not stored in any particular order.
-* Sets can be changed, but only immutable data types may be stored in a set.
+* Sets can be modified, but only immutable data types may be stored in a set.
+* Elements cannot be accessed using indexes.
 
-### Removing Duplicates
+### Unique Elements
 All elements in a set must be unique because the hash code created
 by two duplicate keys will also be the same. Thus, only the first
 element to be hashed will be placed in the hash table. The second element
@@ -111,7 +127,6 @@ each time the program is run. Certain factors like an element's
 location in memory (which also varies each time the program is
 run) will influence the hash code.
 
-## 
 &nbsp;
 ## Set Operations 
   operation   |     description     |     example     |  performance
@@ -144,9 +159,19 @@ print("After removing 'banana':", fruits)
 print("'kiwi' in fruits:", 'kiwi' in fruits)       # 'kiwi' in fruits: True
 print("'banana' in fruits:", 'banana' in fruits)   # 'banana' in fruits: False
 ```
+Sets, as previously mentioned, can only contain elements with immutable data types. However, operations 
+such as add and remove exemplify that **sets themselves can be modified.**
+
+**Other set modification operations include:**
+* discard
+* pop
+* clear
+* update
+* intersection_update
+* difference_update
 
 &nbsp;
-## Mathematical Set Operations 
+## Set Mathematical Operations 
   operation   |     description     |     example     |  performance
 ------------- | ------------------- | --------------- | --------------
 union         | Combines two or<br>more sets into one set. | set1.union(set2)<br>**or**<br>set1 \| set2 | O(n) -- Every element in the<br>smaller set must be checked to<br>ensure there are no duplicate values in the new set.
@@ -183,11 +208,8 @@ print("Difference of sets:", non_team_sports)
 
 ```
 
-**Other mathematical set operations include:**
+**Other set mathematical operations include:**
 * symmetric_difference
 * isdisjoint
 * issubset
 * issuperset
-
-&nbsp;
-## Modifying Set Operations

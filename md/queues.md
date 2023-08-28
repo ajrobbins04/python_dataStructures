@@ -8,8 +8,6 @@ advanced to the very front (head) of the queue.
 
 **Thus, the order that data leaves a queue will be the same order in which it entered the queue.**
 
-&nbsp;
-## Queues in the Real World
 Compared to other data structures, a queue's behavior is relatively simple and easy to
 understand from a real-world perspective. When data enters a queue, it is just taking its
 place to wait at the back of a line like its human counterparts do all the time. The most
@@ -17,8 +15,8 @@ obvious difference is that data is perfectly patient when waiting its turn (whic
 from what transpires at the DMV), so data never tries to "cut" when waiting its turn to exit
 the queue, nor does it try to leave the queue early.
 
- &nbsp;
-## Queues in Technology
+&nbsp;
+## Queue Usage in Technology
 Technology utilizes queues extensively. Queues provide structure and order when automated tasks 
 must be carried out, and they provide a way for resources to be shared without overwhelming 
 and crashing a system. 
