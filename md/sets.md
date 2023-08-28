@@ -1,7 +1,7 @@
 ![Image of Waldo from "Where's Waldo"](../images/sets_intro.jpg)
 
 # Sets
-For the record, sets really would be the data structure that crushes the competition in "Where's Waldo". But, Sets are more properly characterized in technology as the data structure that's great at determining membership.
+For the record, sets really would be the data structure that crushes the competition in "Where's Waldo". But, Sets are more properly characterized in technology as the data structure that's great at determing membership.
  
 Interestingly, sets are able to exceed at being able to determine whether it is storing a particular data value, even though it never attempts to sort its incoming data.  
 
@@ -22,7 +22,17 @@ Hashing makes it possible to instantaneouly locate an element's index, so elemen
 
 ![Chart displaying the steps of the hashing process](../images/hashing_process.jpg)
 
-**Non-hashable elements include:**
+### Hashable Elements
+An element is hashable if Python's hash() function can be called on it.
+Hashing can only be used on elements that are **immutable**, which cannot be modified after being defined. This is because any modification to an element will change its hash code, and thus its position in the hash table. This would inevitably lead to element collisions, and any attempt at conflict resolution would be null and void as other collisions are bound to occur as more changes are made.
+
+**Immutable (and thus hashable) elements include:**
+* integers
+* strings
+* tuples
+* booleans
+
+**Lists and dictionaries are both non-hashable.**
 
 &nbsp;
 ## Set Implementation
@@ -71,10 +81,9 @@ on the implementation method used:
 
 &nbsp;
 ## Characteristics 
-* Elements are not stored in any particular order.
 * All elements must be unique.
+* Elements are not stored in any particular order.
 * Sets can be changed, but only immutable data types may be stored in a set.
-
 
 ### Removing Duplicates
 All elements in a set must be unique because the hash code created
@@ -102,6 +111,7 @@ each time the program is run. Certain factors like an element's
 location in memory (which also varies each time the program is
 run) will influence the hash code.
 
+## 
 &nbsp;
 ## Set Operations 
   operation   |     description     |     example     |  performance
