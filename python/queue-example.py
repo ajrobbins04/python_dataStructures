@@ -2,7 +2,8 @@
 class Queue:
     """
     This is the same queue class that's shown
-    in the previous example. The only difference
+    to demonstrate the enqueue, dequeue, size, 
+    and is_empty operations. The only difference
     is that a few things were renamed to better
     reflect the scenario and additional methods 
     were added to increase functionality.

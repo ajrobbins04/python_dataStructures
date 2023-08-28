@@ -188,17 +188,11 @@ Deque stands for "double-ended queue" because it can add and remove elements eff
 
 &nbsp;
 ## Example: Movie Ticket Queue
-This example depicts a line to buy tickets at a movie
-theater. Each person in line must wait their turn to 
-but tickets, which is a very clear case of "First In,
-First Out" queue behavior. By using queues, this example
-is able to determine whose turn it is to buy tickets. 
-Except, one cannot assume each person in the queue will
-simply buy one ticket for themselves. Oftentimes people
-attending the movies as a group will stand in line together,
-then one member of the group makes the ticket purchases for 
-everyone. This will affect how the queue determines who is
-next in line to buy tickets.
+Imagine a bustling movie theater with a long line of excited moviegoers eagerly waiting to purchase their tickets. This scenario perfectly embodies the "First In, First Out" principle that defines queues.
+
+Although, the ticket-purchasing dynamics aren't always as straightforward as one might assume. Oftentimes people attending the movies as a group will stand in line together, then a single member of the group purchases tickets on behalf of everyone. 
+
+This example demonstrates how queues, despite their straightforward nature, are still able to adapt to this slight twist when determining whose up next to buy tickets without any additional effort.
 
 The .py version of this example can be found [here](python/queue-example.py)
 
@@ -206,10 +200,10 @@ The .py version of this example can be found [here](python/queue-example.py)
 class Queue:
     """
     This is the same queue class that's shown
-    in the previous example. The only difference
-    is that a few things were renamed to better
-    reflect the scenario and additional methods 
-    were added to increase functionality.
+    previously. The only difference is that a 
+    few things were renamed to better reflect 
+    the scenario and additional methods were 
+    added to increase functionality.
     """
 
     def __init__(self):
@@ -320,11 +314,17 @@ class Queue:
         # Show new line stats following ticket purchase
         self.display_line_stats()
  
+########################################
+# Example: Movie ticket queue to
+# demonstrate how queues can determine 
+# the next person in line to buy tickets
+# with efficiency
+########################################
 
 # Create a queue of moviegoers waiting in line to buy tickets.
 ticketLine = Queue()
 
-# Add people to the line.
+# Add people to the line
 ticketLine.enqueue("James")
 ticketLine.enqueue("Rebecca")
 ticketLine.enqueue("Dallin")
@@ -611,4 +611,4 @@ book4.display_status()
 """
 ```
  
-## [Click Here](queue_attributions.md) to view all attributions for this queue tutorial.
+## [Click Here](queue_attributions.md) to view all attributions for this tutorial.
