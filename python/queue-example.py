@@ -80,8 +80,7 @@ class Queue:
     def display_line_stats(self):
         """
         Displays who gets to purchase tickets next, along with the 
-        current order of people in line. This method gets called 
-        after a ticket purchase is made.
+        current order of people in line. 
         """
         # Check if the line is empty
         if self.is_empty():
@@ -93,11 +92,7 @@ class Queue:
 
     def buyTickets(self, num_tickets):
         """
-        Oftentimes movie goers will stand in line together,
-        then one person purchases the tickets for everyone
-        in their group. Thus, the next person to buy tickets
-        won't always be the second person in line. This method
-        updates the line based on how many tickets were 
+        Updates the line based on how many tickets were 
         purchased by the person at the front of the line.
         """
         # Check if the line is empty.
@@ -117,10 +112,17 @@ class Queue:
         # Show new line stats following ticket purchase
         self.display_line_stats()
  
+########################################
+# Example: Movie ticket queue to
+# demonstrate how queues can determine 
+# the next person in line to buy tickets
+# with efficiency
+########################################
+
 # Create a queue of moviegoers waiting in line to buy tickets.
 ticketLine = Queue()
 
-# Add people to the line.
+# Add people to the line
 ticketLine.enqueue("James")
 ticketLine.enqueue("Rebecca")
 ticketLine.enqueue("Dallin")
@@ -130,22 +132,61 @@ ticketLine.enqueue("Brynley")
 ticketLine.enqueue("Carson")
 ticketLine.enqueue("Janette")
 
-# Display the order of everyone in line.
+# Display the current line.
 ticketLine.show_line()
+"""
+The current line order: 
+1. James
+2. Rebecca
+3. Dallin
+4. Adelyn
+5. Parker
+6. Brynley
+7. Carson
+8. Janette
+"""
 
-# People in line will move forward based
-# on the amount of tickets bought.
+# Update line based on the amount of tickets bought.
 ticketLine.buyTickets(5)
+"""
+James just bought 5 tickets. 
+Now it is Brynley's turn to buy tickets.
 
-# Two more people joined the line,
-# so display the new order of everyone in
-# line again.
+The current line order: 
+1. Brynley
+2. Carson
+3. Janette
+"""
+
+# Two more people join the line.
 ticketLine.enqueue("Loren")
 ticketLine.enqueue("Noelle")
-ticketLine.show_line()
 
-# More ticket purchases are made. The line
-# will adjust itself accordingly.
+# Display updated line.
+ticketLine.show_line()
+"""
+The current line order: 
+1. Brynley
+2. Carson
+3. Janette
+4. Loren
+5. Noelle
+"""
+
+# Two final ticket purchases are made.  
+# The line updates after each purchase accordingly.
 ticketLine.buyTickets(3)
+"""
+Brynley just bought 3 tickets.
+Now it is Loren's turn to buy tickets.
+
+The current line order: 
+1. Loren
+2. Noelle
+"""
+
 ticketLine.buyTickets(2)
- 
+"""
+Loren just bought 2 tickets.
+The line is now empty.
+"""
