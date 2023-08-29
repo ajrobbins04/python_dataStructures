@@ -3,8 +3,8 @@
 # Queues
 
 A queue is characterized by its **First In, First Out (FIFO) behavior**. This means that data
-is always added to the back (tail) of a queue, and it can only be removed once it has finally 
-advanced to the very front (head) of the queue. 
+is always added to the back of a queue, and it can only be removed once it has finally 
+advanced to the very front of the queue. 
 
 **Thus, the order that data leaves a queue will be the same order in which it entered the queue.**
 
@@ -59,8 +59,8 @@ performance level of each operation.
 ## Queue Operations 
   operation    |     description     |     example in<br>Python     |  performance
 -------------- | ------------------- | --------------- | --------------
-enqueue(value) | "value" is added to the back of the queue<br>(the queue's tail). | queue.append(value) | O(1) - Appending to the back of the queue always occurs in constant time.
-dequeue        | Removes and returns the value at the front of the queue<br>(the queue's head). | value = queue[0]<br>del queue[0]<br>*or*<br>value = queue.pop(0) | O(n) - Removing the value at index 0 results in a shift in which all elements move up the queue by one index value. Every element must be iterated through to perform this shift.
+enqueue(value) | "value" is added to the back of the queue. | queue.append(value) | O(1) - Appending to the back of the queue always occurs in constant time.
+dequeue        | Removes and returns the value at the front of the queue. | value = queue[0]<br>del queue[0]<br>*or*<br>value = queue.pop(0) | O(n) - Removing the value at index 0 results in a shift in which all elements move up the queue by one index value. Every element must be iterated through to perform this shift.
 size           | Returns the number of elements in the queue. | length = len(queue) | O(1) - Queues keep track of its<br>size internally. No iterations are necessary when len() is called.
 is_empty       | Checks if the queue is empty. | if len(queue) == 0: | O(1) - Queues keep track of its<br>size internally. No iterations are necessary when len() is called.
 
@@ -182,7 +182,7 @@ my_queue.print_queue()
         
 ```
 
-Note that **deque** (pronounced as *"deck"*) provides a **more efficient implementation of the dequeue operation.** It is a more versatile object from Python's collections module that can add and remove elements from its tail *and* its head using linked lists as its basis instead of dynamic arrays.
+Note that **deque** (pronounced as *"deck"*) provides a **more efficient implementation of the dequeue operation.** It is a more versatile object from Python's collections module that can add and remove elements from the back *and* the front using linked lists as its basis instead of dynamic arrays.
 
 Deque stands for "double-ended queue" because it adds and removes elements from both ends in constant O(1) time. By using linked lists, operations like dequeue become more efficient because there is no shifting of elements located in contiguous memory addresses.
 
@@ -417,8 +417,8 @@ each other, and they are retrieved by selecting whichever plate is currently on 
 
 ### Can data be added or removed from somewhere in the middle of Queues and/or Stacks?
 Technically speaking, additional code can be written to make these things possible. However,  
-only being able to add data at the tail and remove data at the head are characteristics that
-define a queue. Likewise, only being able to add and remove data from the tail is what defines
+only being able to add data in the back and remove data from the front are characteristics that
+define a queue. Likewise, only being able to add and remove data from the back is what defines
 a stack. So, once a queue or a stack class breaks out of their defined behaviors, then they aren't
 necessarily considered queues or stacks any more.
 
@@ -450,7 +450,7 @@ to check out a currently unavailable book.
 * Implement the return_book() method so a book gets added back into the inventory if its waitlist is
 empty, or it "gives" the book to the next person on the waitlist.
 * Implement the print_waitlist() method to show all the card barcodes that are stored in a book's waitlist.
-Rank each barcode according to its position in the waitlist (1 would be at the head).
+Rank each barcode according to its position in the waitlist (1 would be at the front).
 * Implement the display_status() method to provide updates on a book's status.
     * Is the book available to be checked out?
     * If it isn't available, then is there currently a waitlist?
