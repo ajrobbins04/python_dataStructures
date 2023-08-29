@@ -112,6 +112,7 @@ class Queue:
         # Show new line stats following ticket purchase
         self.display_line_stats()
  
+ 
 ########################################
 # Example: Movie ticket queue to
 # demonstrate how queues can determine 

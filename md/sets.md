@@ -96,10 +96,12 @@ on the implementation method used:
 
 &nbsp;
 ## Characteristics 
+* Elements cannot be accessed using indexes.
 * All elements must be unique.
 * Elements are not stored in any particular order.
 * Sets can be modified, but only immutable data types may be stored in a set.
-* Elements cannot be accessed using indexes.
+
+### Accessing Elements
 
 ### Unique Elements
 All elements in a set must be unique because the hash code created

@@ -15,6 +15,8 @@
 
 [Selecting the Best Queue Data Structure for Your Use Case](https://www.cardinalpeak.com/blog/selecting-the-best-queue-data-structure-for-your-use-case)
 
+[Linked Lists in Python: An Introduction](https://realpython.com/linked-lists-python/)
+
 &nbsp;
 ## Images:
 [Image by pch.vector](https://www.freepik.com/free-vector/sale-illustration-line-customers-waiting-store-opening_13146640.htm#query=people%20waiting&position=1&from_view=keyword&track=ais) on Freepik
