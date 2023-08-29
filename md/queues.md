@@ -182,9 +182,9 @@ my_queue.print_queue()
         
 ```
 
-Note that **deque** (pronounced as *"deck"*) serves as a **more efficient alternative** to the dequeue operation. It is an object from Python's collections module that implements queues using linked lists instead of lists based on dynamic arrays.
+Note that **deque** (pronounced as *"deck"*) provides a **more efficient implementation of the dequeue operation.** It is a more versatile object from Python's collections module that can add and remove elements from its tail *and* its head using linked lists as its basis instead of dynamic arrays.
 
-Deque stands for "double-ended queue" because it can add and remove elements efficiently from the queue's head *and* its tail. By using linked lists, operations like dequeue become more efficient because there is no shifting of elements located in contiguous memory addresses.
+Deque stands for "double-ended queue" because it adds and removes elements from both ends in constant O(1) time. By using linked lists, operations like dequeue become more efficient because there is no shifting of elements located in contiguous memory addresses.
 
 &nbsp;
 ## Example: Movie Ticket Queue
