@@ -47,8 +47,8 @@ class LinkedList:
         # If the the list is not empty, then only
         # self.head will be affected by the insertion.
         else:
-            new_node.next = self.head  # Connect the new node to the curr_node head using its 'next' link
-            self.head.prev = new_node  # Connect the curr_node head to the new node using its 'prev' link
+            new_node.next = self.head  # Connect the new node to the current head using its 'next' link
+            self.head.prev = new_node  # Connect the current head to the new node using its 'prev' link
             self.head = new_node       # Now set the head equal to the new node
 
     def insert_tail(self, value):
@@ -69,8 +69,8 @@ class LinkedList:
         # If the the list is not empty, then only
         # self.tail will be affected by the insertion.
         else:
-            new_node.prev = self.tail  # Connect the new node to the curr_node tail using its 'prev' link
-            self.head.next = new_node  # Connect the curr_node tail to the new node using its 'next' link
+            new_node.prev = self.tail  # Connect the new node to the current tail using its 'prev' link
+            self.tail.next = new_node  # Connect the current tail to the new node using its 'next' link
             self.tail = new_node       # Now set the tail equal to the new node
 
     def remove_head(self):
@@ -135,7 +135,7 @@ class LinkedList:
                 return 
             
             # Go to the next node to search for 'value'.
-            curr_node = next_node
+            curr_node = curr_node.next
 
     def remove(self, value):
         """
@@ -178,5 +178,91 @@ class LinkedList:
                         
                         prev_node.next = curr_node.next # Set the previous node's 'next' link to the curent node's 'next' link.
                         next_node.prev = curr_node.prev # Set the next node's 'prev' link to the current node's 'prev' link.
-                        
+                    
+                    # Exit out of function once current node is removed.
+                    return
+                
+                # Go to the next node to search for 'value'.
+                curr_node = curr_node.next
 
+    def __iter__(self):
+        """
+        Iterates forward through the linked list.
+        """
+        current = self.head  # Start at the head for a forward iteration.
+
+        while current is not None:
+            yield current.data      # Provide each item to the user.
+            current = current.next  # Move forward to the next node.
+
+    def __reverseIter__(self):
+        """
+        Iterates backward through the linked list.
+        """
+        current = self.tai  # Start at the tail for a backward iteration.
+
+        # Iterate backwards until reaching the head node's 'prev' link.
+        while current != self.head.prev:
+            yield current.data      # Provide each item to the user.
+            current = current.prev  # Move backward to the previous node.
+
+    def __str__(self):
+        """
+        Return a string representation of the linked list.
+        """
+        output = "linked list: ["
+        first = True
+        for value in self:
+            if first:
+                first = False
+            else:
+                output += ", "
+            output += str(value)
+        output += "]"
+        return output
+    
+
+print("\n=========== PROBLEM 1 TESTS ===========")
+ll = LinkedList()
+ll.insert_tail(1)
+ll.insert_head(2)
+ll.insert_head(2)
+ll.insert_head(2)
+ll.insert_head(3)
+ll.insert_head(4)
+ll.insert_head(5)
+print(ll) # linkedlist[5, 4, 3, 2, 2, 2, 1]
+ll.insert_tail(0)
+ll.insert_tail(-1)
+print(ll) # linkedlist[5, 4, 3, 2, 2, 2, 1, 0, -1]
+
+print("\n=========== PROBLEM 2 TESTS ===========")
+ll.remove_tail()
+print(ll) # linkedlist[5, 4, 3, 2, 2, 2, 1, 0]
+ll.remove_tail()
+print(ll) # linkedlist[5, 4, 3, 2, 2, 2, 1]
+
+print("\n=========== PROBLEM 3 TESTS ===========")
+ll.insert_after(3, 3.5)
+ll.insert_after(5, 6)
+print(ll) # linkedlist[5, 6, 4, 3, 3.5, 2, 2, 2, 1]
+ll.remove(-1)
+print(ll) # linkedlist[5, 6, 4, 3, 3.5, 2, 2, 2, 1]
+ll.remove(3)
+print(ll) # linkedlist[5, 6, 4, 3.5, 2, 2, 2, 1]
+ll.remove(6)
+print(ll) # linkedlist[5, 4, 3.5, 2, 2, 2, 1]
+ll.remove(1)
+print(ll) # linkedlist[5, 4, 3.5, 2, 2, 2]
+ll.remove(7)
+print(ll) # linkedlist[5, 4, 3.5, 2, 2, 2]
+ll.remove(5)
+print(ll) # linkedlist[4, 3.5, 2, 2, 2]
+ll.remove(2)
+print(ll) # linkedlist[4, 3.5, 2, 2]
+
+
+
+
+print("\n=========== PROBLEM 5 TESTS ===========")
+print(list(reversed(ll)))  # [10, 10, 3.5, 100]

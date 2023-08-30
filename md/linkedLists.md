@@ -4,7 +4,7 @@ Data structures such as queues and stacks
 * Adding and removing elements only has an effect on neighboring elements.
 * Linked lists never run out of space. Every time it needs a memory block, it uses pointers to link to one.
 
-
+&nbsp;
 ## Linked List Performance vs. Dynamic Arrays
 
 ### Adding / Removing Elements
@@ -23,6 +23,7 @@ When searching for an element without knowing its index, then both linked lists 
 
 However, dynamic arrays **outperform linked lists when the index is known.** In this case, dynamic arrays can retrieve the desired element in O(1) time because its elements are stored in contiguous memory blocks, so there is no need to traverse through them. Linked lists, on the other hand, must still traverse through every element in O(n) time because its elements are stored in scattered memory addresses. There is no possible way to locate an element unless the linked list's nodes are traversed one by one. 
 
+&nbsp;
 ## Structure of a Linked List
 Linked lists do not store its elements side-by-side in contiguous memory blocks like dynamic arrays for easy access. It stores its elements randomly in memory, and it makes these elements accessible by creating a link (using a pointer) on each element that contains the memory location of the next element in the linked list.
 
@@ -38,7 +39,7 @@ A doubly-linked list can be traversed by starting at the head and following the 
 
 ![Image of a Doubly-Linked List](../images/doublyLinkedList.png)
 
-
+&nbsp;
 ## Implementing a Doubly-Linked List
 
 ### Inserting at the Head
@@ -53,6 +54,7 @@ If the list is **currently empty**, then
 
 ### Element Removal
 
+&nbsp;
 ## Linked List Operations
 
 ## Deque
