@@ -6,7 +6,12 @@
 
 &nbsp;
 ## Online Articles:
+
+&nbsp;
+## Online Videos:
 [Using the bisect Module](https://realpython.com/lessons/using-bisect-module/)
+
+[Implementing Binary Search](https://realpython.com/lessons/implement-binary-search/)
 
 &nbsp;
 ## Images:
