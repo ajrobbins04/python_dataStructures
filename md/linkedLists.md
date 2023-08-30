@@ -2,8 +2,7 @@
 Data structures such as queues and stacks 
 **The advantages over dynamic array-based data structures include:**
 * Adding and removing elements only has an effect on neighboring elements.
-* Elements reaching capacity is not a concern.
-
+* Linked lists never run out of space. Every time it needs a memory block, it uses pointers to link to one.
 
 
 ## Linked List Performance vs. Dynamic Arrays
@@ -35,16 +34,16 @@ The component of the linked list that stores an element and the link is referred
 
 A **doubly-linked list** is created when each node stores a link to the next element and a link to the previous element.
 
+A doubly-linked list can be traversed by starting at the head and following the next node links forward, or it can start at the tail and follow the previous node links backwards.
+
 ![Image of a Doubly-Linked List](../images/doublyLinkedList.png)
 
 
-## Linked List Implementation
-
-### Creating a Linked List
+## Implementing a Doubly-Linked List
 
 ### Inserting at the Head
 
-(include special case if linked list is empty)
+If the list is **currently empty**, then 
 
 ### Inserting at the Tail
 
