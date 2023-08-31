@@ -3,6 +3,9 @@ A tree is like a linked list in the sense that both data structures are made up 
 
 ## bisect module
 
+## Binary Tree Characteristics
+* A node cannot have more than 2 child nodes.
+
 &nbsp;
 ## The Binary Search
 Searching for data in a linked list is not achieved in constant time. Nodes are added to the linked list without any attempt to sort the incoming data, and as a result, the searches are performed in O(n) time. This may not be an issue if there are only 10 nodes in the linked list, but this process is akin to taking one page from a stack of unsorted pages and flipping through them one-by-one until the right page is found. With large data sets, this process is extremely inefficient.
@@ -27,11 +30,13 @@ In this instance, page 325 was found in 5 steps, rather than 325 steps if each s
 ## The Binary Search Tree 
 The very first node of a binary search tree is known as the **root** node, and there is only one root node per tree. A **parent** node refers to any node in the tree that connects to lower nodes, while these lower nodes are called **child** nodes. Two child nodes of the same parent node are considered **sibling** nodes. Any node without a child node is a **leaf** node. 
 
-One binary search tree also contains **subtrees**. A subtree consists of one parent node, and all its child nodes. A subtree can span more than two levels, and the total number of levels in the whole tree is considered its **height**.
+The total **height** of a binary search tree can be found by counting up the number of levels in the tree, with the root level always representing level 0. 
 
-![Image displaying the properties of a binary tree](../images/treeTerms.png)
+One binary search tree also contains **subtrees**. A subtree consists of one parent node and all its child nodes. A subtree can have a height that's larger than 1. Keep in mind when  finding the subtree height that its parent node would be considered its root, so it represents level 0.
 
-![Image displaying the properties of a tree, including its height](../images/treeTerms.webp)
+![Image of Binary Tree Components](../images/treeComponents.png)
+
+
 
 ### Node Placement
 A binary sort tree determines where the node of a new element will be placed by first comparing the value of the new element to the value found in the root node. If it is less than the node, then it will be placed in the left subtree. If it is greater than the node, then it will be placed in the right subtree. If the tree allows duplicate values, then any equivalent values can be placed in either the left or the right subtree according to the specifics set forth in the binary sorting algorithm. 
