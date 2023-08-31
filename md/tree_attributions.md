@@ -17,3 +17,9 @@
 ## Images:
 [1. Properties of a Tree](https://towardsdatascience.com/8-useful-tree-data-structures-worth-knowing-8532c7231e8c)
 ![Image displaying the properties of a tree](../images/treeTerms.png)
+
+[2. Properties of a Tree, Including Height](https://learnersbucket.com/examples/algorithms/find-height-and-width-of-binary-tree/)
+![Image displaying the properties of a tree, including its height](../images/treeTerms.webp)
+
+Node Placement Example made using [Google Diagrams](https://drawio.com)
+![Node Placement, Example 2](../images/nodePlacement.png)
