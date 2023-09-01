@@ -28,6 +28,8 @@ In this instance, page 325 was found in 5 steps, rather than 325 steps if each s
 
 &nbsp;
 ## The Binary Search Tree 
+Binary search trees utilizes the same concept explained above.
+
 The very first node of a binary search tree is known as the **root** node, and there is only one root node per tree. A **parent** node refers to any node in the tree that connects to lower nodes, while these lower nodes are called **child** nodes. Two child nodes of the same parent node are considered **sibling** nodes. Any node without a child node is a **leaf** node. 
 
 The total **height** of a binary search tree can be found by counting up the number of levels in the tree, with the root level always representing level 0. 
@@ -35,8 +37,6 @@ The total **height** of a binary search tree can be found by counting up the num
 One binary search tree also contains **subtrees**. A subtree consists of one parent node and all its child nodes. A subtree can have a height that's larger than 1. Keep in mind when  finding the subtree height that its parent node would be considered its root, so it represents level 0.
 
 ![Image of Binary Tree Components](../images/treeComponents.png)
-
-
 
 ### Node Placement
 A binary sort tree determines where the node of a new element will be placed by first comparing the value of the new element to the value found in the root node. If it is less than the node, then it will be placed in the left subtree. If it is greater than the node, then it will be placed in the right subtree. If the tree allows duplicate values, then any equivalent values can be placed in either the left or the right subtree according to the specifics set forth in the binary sorting algorithm. 
@@ -51,8 +51,10 @@ If the root node already contains a child node in the subtree position intended 
 * Compare 36 with the partial leaf node, which contains 40. 36 is less than 40, and since there is no left-hand side child node, the node containing 36 will be placed in that position:
 ![After Node Placement Example](../images/nodePlacement_after.png)
 
-
 ### Performance
 The binary search is able to sort data in **O log(n) time**, so its efficiency actually *increases* as the input size increases. This occurs because the data always gets split in half, so significantly large inputs simply result in significant amounts of data exclusion as well.
 
 ### Balancing the Binary Tree
+The resulting structure of a binary tree relies on the order in which elements are added to the tree. If, for example, a set of integers were added from the largest value to the smallest, then the binary "tree" will end up being a straight line like a linked list. This would occur because every value would be placed on the left subtree, which never gives the data the change to disperse so every node doesn't have to be checked in a search. 
+
+Binary searches are only efficient as long as the nodes in the left and right subtrees maintain a 1:1 ratio. Every time a binary search moves on to a new level of the tree, it does so by moving either left or right into a smaller subtree. In a balanced tree, that move will remove 50% of the data currently in the search pool. If one side of any subtree has more nodes than the other side, then moving on to a left or right subtree is no way to remove 50% of the data from the search pooleach level in a tree is traversed, 50% of the search pool is excluded from the search when whole purpose of the binary search is to remove 50% o
