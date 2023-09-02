@@ -55,6 +55,14 @@ If the root node already contains a child node in the subtree position intended 
 The binary search is able to sort data in **O log(n) time**, so its efficiency actually *increases* as the input size increases. This occurs because the data always gets split in half, so significantly large inputs simply result in significant amounts of data exclusion as well.
 
 ### Balancing the Binary Tree
-The resulting structure of a binary tree relies on the order in which elements are added to the tree. If, for example, a set of integers were added from the largest value to the smallest, then the binary "tree" will end up being a straight line like a linked list. This would occur because every value would be placed on the left subtree, which never gives the data the change to disperse so every node doesn't have to be checked in a search. 
+The resulting structure of a binary tree relies on the order in which elements are added to the tree. If, for example, a set of integers were added from the largest value to the smallest, then the binary tree would end up being structured as a straight line - just like a linked list. This would occur because every value would continue to be placed in the left subtree, which never gives the data the change to disperse and form separate subtrees.
 
-Binary searches are only efficient as long as the nodes in the left and right subtrees maintain a 1:1 ratio. Every time a binary search moves on to a new level of the tree, it does so by moving either left or right into a smaller subtree. In a balanced tree, that move will remove 50% of the data currently in the search pool. If one side of any subtree has more nodes than the other side, then moving on to a left or right subtree is no way to remove 50% of the data from the search pooleach level in a tree is traversed, 50% of the search pool is excluded from the search when whole purpose of the binary search is to remove 50% o
+Binary searches are only efficient as long as the nodes in the left and right subtrees of any given level maintain a roughly 1:1 ratio. Every time a binary search moves on to a new level of the tree, it does so by moving either left or right into a smaller subtree. In a balanced tree, that move exculdes all the data from the subtree path that wasn't taken. In doing so, that exclusion will account for 50% of the data from the search pool. 
+
+You can **check if a tree is unbalanced** by following these simple steps:
+1. Check the height of the left subtree.
+2. Check the height of the right subtree.
+3. Check the difference between both heights. If it is greater than 1, then the tree is unbalanced.
+
+The left subtree under the 20 parent node has a height of 1, while the right subtree has a height of 3. This difference of 2 makes the tree unbalanced. and right subtrees at the parent node containing 20,
+![Image of unbalanced tree](../images/unbalancedTree.png)

@@ -22,3 +22,6 @@
 
 Node Placement Example made using [Google Diagrams](https://drawio.com)
 ![Node Placement, Example 2](../images/nodePlacement.png)
+
+Unbalanced Tree Example made using [Google Diagrams](https://drawio.com)
+![Image of unbalanced tree](../images/unbalancedTree.png)
