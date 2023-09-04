@@ -45,6 +45,8 @@ null and void as other collisions are bound to occur as more changes are made.
 * tuples
 * booleans
 
+A set can contain a variety of data types, as long as they are hashable.
+
 **Non-hashable elements include:**
 * lists
 * dictionaries
@@ -215,5 +217,13 @@ print("Difference of sets:", non_team_sports)
 * isdisjoint
 * issubset
 * issuperset
+
+&nbsp;
+## Final Problem to Solve: Retrieve Basic Information about Students and their High School Classes
+One of the more unique aspects of this problem is that simpler data sets, are more straightforward when implementing methods. The set of students only contains objects from the Student class, which comes with its own set (no pun intended) of challenges.
+
+**Things to note**
+1. Determining membership when the set's key is a custom object
+2. Python's built-in hash function must be used.
 
 ## [Click Here](set_attributions.md) to view all attributions for this tutorial.
