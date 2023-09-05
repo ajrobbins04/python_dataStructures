@@ -135,10 +135,10 @@ run) will influence the hash code.
 ## Set Operations 
   operation   |     description     |     example     |  performance
 ------------- | ------------------- | --------------- | --------------
-add(value)    | "value" is added to<br>the set. | set.add(value) | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
-remove(value) | "value" is removed<br>from the set. | set.remove(value) | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
-member(value) | Determines if "value"<br>is in the set. | if value **in** set | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
-size          | Returns the number<br>of set elements. | length = len(set) | O(1) - Sets keep track of its<br>size internally. No iterations are necessary.
+add(value)    | "value" is added to<br>the set. | a_set.add(value) | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
+remove(value) | "value" is removed<br>from the set. | a_set.remove(value) | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
+member(value) | Determines if "value"<br>is in the set. | if value **in** a_set | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
+size()        | Returns the number<br>of set elements. | length = len(a_set) | O(1) - Sets keep track of its<br>size internally, so no loops are necessary.
 
 ```python
 # Creates a set using string objects as arguments

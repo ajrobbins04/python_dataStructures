@@ -59,10 +59,10 @@ performance level of each operation.
 ## Queue Operations 
   operation    |     description     |     example in<br>Python     |  performance
 -------------- | ------------------- | --------------- | --------------
-enqueue(value) | "value" is added to the back of the queue. | queue.append(value) | O(1) - Appending to the back of the queue always occurs in constant time.
-dequeue        | Removes and returns the value at the front of the queue. | value = queue[0]<br>del queue[0]<br>*or*<br>value = queue.pop(0) | O(n) - Removing the value at index 0 results in a shift in which all elements move up the queue by one index value. Every element must be iterated through to perform this shift.
-size           | Returns the number of elements in the queue. | length = len(queue) | O(1) - Queues keep track of its<br>size internally. No iterations are necessary when len() is called.
-is_empty       | Checks if the queue is empty. | if len(queue) == 0: | O(1) - Queues keep track of its<br>size internally. No iterations are necessary when len() is called.
+enqueue(value) | "value" is added to the back of the queue. | a_queue.append(value) | O(1) - Appending to the back of the queue always occurs in constant time.
+dequeue()      | Removes and returns the value at the front of the queue. | value = a_queue[0]<br>del a_queue[0]<br>*or*<br>value = a_queue.pop(0) | O(n) - Removing the value at index 0 results in a shift in which all elements move up the queue by one index value. Every element must be iterated through to perform this shift.
+size()         | Returns the number of elements in the queue. | length = len(a_queue) | O(1) - Queues keep track of its<br>size internally. No iterations are necessary when len() is called.
+is_empty()     | Checks if the queue is empty. | if len(a_queue) == 0: | O(1) - Queues keep track of its<br>size internally, so no loops are necessary.
 
 ```python
 """
