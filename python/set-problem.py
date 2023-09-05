@@ -8,15 +8,15 @@ class Student:
         self.student_number = student_number
         self.classes = set()
 
-
+ 
     def __eq__(self, other):
         """
-        Compares the attributes of Student objects.
+        Checks whether two student Objects are one in the same using their attributes. 
         """
-        # Is the passed-in 'self' parameter a Student object?
+        # First ensure that both variables are Student objects.
         if isinstance(other, Student):
             return (
-                # Check that the attributes match
+                # Check that their attributes match
                 self.first_name == other.first_name and
                 self.last_name == other.last_name and
                 self.student_number == other.student_number
@@ -26,28 +26,38 @@ class Student:
 
     def __hash__(self):
         """
-        Creates a hash value based on the attributes assigned
-        to a Student object upon instantiation.
+        Computes a hash value based on the attributes of the
+        Student object.
         """
         return hash((self.first_name, self.last_name, self.student_number))
+
+
+def print_classList(student):
+    """
+    Displays all six classes assigned to a student.
+    """
+    print(f"\n\nClass Schedule for {student.first_name} {student.last_name}:\n")
+    
+    for i, class_name in enumerate(student.classes, start=1):
+        print(f"Class {i}: {class_name}")
 
 
 def populate_classes(students, classes):
     """
     Gives every student one class from all six categories available:
     social studies, science, english, math, foreign languages, and electives.
-    The category order and class selection for each student will be randomized.
+    The order of categories and classes selected will be random per student.
     """
     for student in students:
-
-        # Sometimes shuffling the classes may appear to be unnecessary, since
+        # Randomizing the classes may seem unnecessary considering that
         # elements added to a set don't always maintain their original order. 
-        # But, enough could to give away a pattern.
+        # But, enough may not move to make this step useful.
         random.shuffle(classes)
 
         for category in classes:
             class_assigned = random.choice(category)
             student.classes.add(class_assigned)
+
 
 # Create a set containing high school students 
 all_students = {
@@ -150,12 +160,6 @@ available_classes = [["US History", "World History", "US Government"],
 
 populate_classes(all_students, available_classes)
 
-"""   
-def print_classList(student):
-    print(f"\n\nClass Schedule for {student.first_name} {student.last_name}:\n")
-    for i, class_name in enumerate(student.classes, start=1):
-        print(f"Class {i}: {class_name}")
-"""
 
 ###################
 #    Problem 1    #
@@ -167,22 +171,46 @@ def is_student(first_name, last_name, student_number, all_students):
     its hash table location, so an object is going to be needed again to check 
     for membership.
     """
-    student = Student(first_name, last_name, student_number)
-    if student in all_students:
+
+    # The hash value of student_to_find is found using the __hash__ method.
+    student_to_find = Student(first_name, last_name, student_number)
+    if student_to_find in all_students:
         print(f"{first_name} {last_name} is a student.\n")
     else:
         print(f"{first_name} {last_name} is not a student.\n")
 
 
+###################
+#    Problem 2    #
+###################
+def add_student(first_name, last_name, student_number, all_students):
+    print("student")
+
+
+###################
+#    Problem 3    #
+###################
+def remove_student(first_name, last_name, student_number, all_students):
+    """
+    There are two approaches that can be used in this function. Sets have
+    'remove' method, which removes an element that's been found in the set.
+    However, an error will be raised if the element turns out not to be
+    a member of the set.
+
+    Sets also have a 'discard' method, which either removes a found element,
+    or does nothing if the element isn't actually in the set.
+    """
+    print("student")
+
+
+
 print("\n\n=========== PROBLEM 1 TESTS ===========\n")
-is_student("Aiden", "Brown", 10055, all_students)           # Aiden Brown is a student.
-is_student("Katherine", "Turner", 10051, all_students)      # Katherine Turener is not a student.
-is_student("Finn", "Anderson", 10078, all_students)         # Finn Anderson is not a student.
-is_student("Yasmine", "Lopez", 10053, all_students)         # Yasmine Lopez is a student.
+is_student("Aiden", "Brown", 10055, all_students)         # Aiden Brown is a student.
+is_student("Katherine", "Turner", 10051, all_students)    # Katherine Turner is not a student.
+is_student("Finn", "Anderson", 10078, all_students)       # Finn Anderson is not a student.
+is_student("Yasmine", "Lopez", 10053, all_students)       # Yasmine Lopez is a student.
 
 print("\n\n=========== PROBLEM 2 TESTS ===========\n")
 print("\n\n=========== PROBLEM 3 TESTS ===========\n")
 print("\n\n=========== PROBLEM 4 TESTS ===========\n")
 
-hashValue("Finn", "Anderson", 10078)         # Finn Anderson is not a student.
-hashValue("Yasmine", "Lopez", 10053)   
