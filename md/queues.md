@@ -57,7 +57,8 @@ performance level of each operation.
 
 &nbsp;
 ## Queue Operations 
-  operation    |     description     |     example in<br>Python     |  performance
+&nbsp;
+  Operation    |     Description     |     Example<br>*(in Python)*     |  Performance
 -------------- | ------------------- | --------------- | --------------
 enqueue(value) | "value" is added to the back of the queue. | a_queue.append(value) | O(1) - Appending to the back of the queue always occurs in constant time.
 dequeue()      | Removes and returns the value at the front of the queue. | value = a_queue[0]<br>del a_queue[0]<br>*or*<br>value = a_queue.pop(0) | O(n) - Removing the value at index 0 results in a shift in which all elements move up the queue by one index value. Every element must be iterated through to perform this shift.

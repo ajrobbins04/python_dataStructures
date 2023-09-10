@@ -133,7 +133,8 @@ run) will influence the hash code.
 
 &nbsp;
 ## Set Operations 
-  operation   |     description     |     example     |  performance
+&nbsp;
+  Operation   |     Description     |     Example     |  Performance
 ------------- | ------------------- | --------------- | --------------
 add(value)    | "value" is added to<br>the set. | a_set.add(value) | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).
 remove(value) | "value" is removed<br>from the set. | a_set.remove(value) | O(1) - Hashing enables instantaneous lookup<br>(assuming any conflicts are resolved).

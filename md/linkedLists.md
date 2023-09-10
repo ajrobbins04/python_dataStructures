@@ -43,12 +43,19 @@ A doubly-linked list can be traversed by starting at the head and following the 
 ## Implementing a Doubly-Linked List
 
 ### Inserting at the Head
+![Image of Inserting a New Head to a Doubly-Linked List](../images/linkedList_insertHead.png)
+
+
+ 
+### Inserting in the Middle
+![Image of Inserting a Middle Node to a Doubly-Linked List](../images/linkedList_insertMiddle.png)
+
 
 If the list is **currently empty**, then 
 
 ### Inserting at the Tail
+![Image of Inserting a New Tail to a Doubly-Linked List](../images/linkedList_insertTail.png)
 
-### Inserting in the Middle
 
 ### Element Access
 
@@ -59,13 +66,14 @@ If the list is **currently empty**, then
 
 &nbsp;
 ## Linked List Operations (Using a deque)
-     operation     |     description     |     example in<br>Python     |  performance
------------------- | ------------------- | ---------------------------- | --------------
+&nbsp;
+   Operation     |      Description      |     Example<br>*(in Python)*     |  Performance
+---------------- | --------------------- | --------------- | --------------
 insert_head(value) | "value" is added as the head node. | a_deque.appendLeft(value) | O(1) - Only the pointers near the head are altered.
 insert_tail(value) | "value" is added as the tail node. | a_deque.append(value) | O(1) - Only the pointers at the former tail are affected.
-insert(i, value)   | "value" is added *after* node i | a_deque.insert(value, i) | O(n) - It is necessary to perform a loop in order to find node i.
+insert(i, value)   | "value" is added after node i. | a_deque.insert(value, i) | O(n) - It is necessary to perform a loop in order to find node i.
 remove_head()      | Removes the list's head (its first node). | value = a_deque.popleft() | O(1) - Only the pointers near the head are altered.
 remove_tail(index) | Removes the list's tail (its last node). | value = a_deque.pop() | O(1) - Only the pointers near the tail are altered.
 remove(i)          | Removes node at "i". | del a_deque[i] | O(n) - Linked list nodes cannot be accessed directly by their index, so it can take time to loop through the list to locate node "i".
 size()             | Returns the total number of nodes. | length = len(a_deque) | O(1) - Linked lists keep track of its size internally, so no loops are necessary.
-empty()            | Returns "True" whenever nodes are absent. | if len(my_deque) == 0: | O(1) - It takes no effort to compare the size of the list with 0.
+empty()            | Returns "True" when there aren't any nodes. | if len(my_deque) == 0: | O(1) - It takes no effort to compare the size of the list with 0.
