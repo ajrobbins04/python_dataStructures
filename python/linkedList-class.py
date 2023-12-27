@@ -1,9 +1,9 @@
 class LinkedList:
     """
-    Implements the doubly-linked list data structure.
-    This class has an inner class, Node, that will be
-    used to instantiate every node contained in the
-    doubly-linked list. 
+    Implements a doubly-linked list data structure. 
+    The LinkedList class has an inner class, Node, 
+    that will be used to instantiate every node 
+    contained in the doubly-linked list. 
     """
 
     class Node:
@@ -184,7 +184,45 @@ class LinkedList:
                 
                 # Go to the next node to search for 'value'.
                 curr_node = curr_node.next
+        ###################
+    # Start Problem 4 #
+    ###################
+    def replace(self, old_value, new_value):
+        """
+        Search for all instances of 'old_value' and replace the value 
+        to 'new_value'.
+        """
+        # Search for all nodes that match 'old_value'
+        # starting at the head of the list.
+        curr = self.head
 
+        # If the first node matches 'old_value'
+        if curr.data == old_value:
+            # then remove 'old_value'
+            self.remove_head()
+            # and insert 'new_value' in its place.
+            self.insert_head(new_value)
+
+        # Search through all the rest of the nodes  
+        # for those that match 'old_value'
+        while curr is not None:
+            # If the node matches 'old_value'
+            if curr.data == old_value:
+                # and if the node is the last node
+                if curr == self.tail:
+                    # then remove the last node containing 'old_value'
+                    self.remove_tail()
+                    # and insert a new node at the tail containing 'new_value'.
+                    self.insert_tail(new_value)
+                # and if the node containing 'old_value' is somewhere inside the list
+                else:
+                    # then insert a new node containing 'new_value' after the 
+                    # node containing 'old_value'
+                    self.insert_after(old_value, new_value)
+                    # and remove the node containing 'old_value'.
+                    self.remove(old_value)
+
+            curr = curr.next # Move onto the next node in search.
     def __iter__(self):
         """
         Iterates forward through the linked list.

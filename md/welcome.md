@@ -1,8 +1,8 @@
 # Diving into Python's Data Structures  
 ## A Tutorial on Queues, Sets, and Trees
 
-[Queues](queues.md)
+[Queues](md/queues.md)
 
-[Sets](sets.md)
+[Sets](md/sets.md)
 
-[Trees](trees.md)
+[Trees](md/trees.md)
