@@ -1,3 +1,8 @@
+
+---
+title: Queues
+---
+
 ![Cartoon image of people standing in a waiting queue](../images/queue_intro.webp)
 
 # Queues

@@ -1,3 +1,8 @@
+
+---
+title: Linked Lists
+---
+
 # Linked Lists
 Data structures such as queues and stacks 
 **The advantages over dynamic array-based data structures include:**

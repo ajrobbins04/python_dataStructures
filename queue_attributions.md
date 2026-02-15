@@ -1,3 +1,8 @@
+
+---
+title: Works Cited - Queues
+---
+
 # Queue Tutorial Attributions
 
 ## Class Materials:

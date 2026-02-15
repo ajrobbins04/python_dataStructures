@@ -1,3 +1,8 @@
+
+---
+title: Works Cited - Trees
+---
+
 # Tree Tutorial Attributions
 
 ## Class Materials:

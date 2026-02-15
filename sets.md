@@ -1,3 +1,8 @@
+
+---
+title: Sets
+---
+
 ![Image of Waldo from "Where's Waldo"](../images/sets_intro.jpg)
 
 # Sets

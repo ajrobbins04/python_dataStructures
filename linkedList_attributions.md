@@ -1,3 +1,8 @@
+
+---
+title: Works Cited - Linked Lists
+---
+
 # Linked List Tutorial Attributions
 
 ## Class Materials:

@@ -1,3 +1,8 @@
+
+---
+title: Works Cited - Sets
+---
+
 # Set Tutorial Attributions
 
 ## Class Materials:
