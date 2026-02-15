@@ -3,7 +3,7 @@
 title: Sets
 ---
 
-![Image of Waldo from "Where's Waldo"](../images/sets_intro.jpg)
+![Image of Waldo from "Where's Waldo"](./images/sets_intro.jpg)
 
 # Sets
 The set data structure is renowned for its highly efficient membership determination. Sets can ascertain 
@@ -31,7 +31,7 @@ element's index value within the table.
 Hashing makes it possible to instantaneouly locate an element's index, so elements can be added, removed, 
 and retrieved in constant O(1) time. 
 
-![Chart displaying the steps of the hashing process](../images/hashing_process.jpg)
+![Chart displaying the steps of the hashing process](./images/hashing_process.jpg)
 
 ### A Simple Example
 

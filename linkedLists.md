@@ -36,30 +36,30 @@ Linked lists do not store its elements side-by-side in contiguous memory blocks 
 
 The component of the linked list that stores an element and the link is referred to as a **node.** The **head** is the first node in the linked list, and the **tail** is the last node in the linked list.
 
-![Image of a Linked List, and a Node](../images/linkedList_andNode.png)
+![Image of a Linked List, and a Node](./images/linkedList_andNode.png)
 
 A **doubly-linked list** is created when each node stores a link to the next element and a link to the previous element.
 
 A doubly-linked list can be traversed by starting at the head and following the next node links forward, or it can start at the tail and follow the previous node links backwards.
 
-![Image of a Doubly-Linked List](../images/doublyLinkedList.png)
+![Image of a Doubly-Linked List](./images/doublyLinkedList.png)
 
 &nbsp;
 ## Implementing a Doubly-Linked List
 
 ### Inserting at the Head
-![Image of Inserting a New Head to a Doubly-Linked List](../images/linkedList_insertHead.png)
+![Image of Inserting a New Head to a Doubly-Linked List](./images/linkedList_insertHead.png)
 
 
  
 ### Inserting in the Middle
-![Image of Inserting a Middle Node to a Doubly-Linked List](../images/linkedList_insertMiddle.png)
+![Image of Inserting a Middle Node to a Doubly-Linked List](./images/linkedList_insertMiddle.png)
 
 
 If the list is **currently empty**, then 
 
 ### Inserting at the Tail
-![Image of Inserting a New Tail to a Doubly-Linked List](../images/linkedList_insertTail.png)
+![Image of Inserting a New Tail to a Doubly-Linked List](./images/linkedList_insertTail.png)
 
 
 ### Element Access

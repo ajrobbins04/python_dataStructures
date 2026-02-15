@@ -3,7 +3,7 @@
 title: Queues
 ---
 
-![Cartoon image of people standing in a waiting queue](../images/queue_intro.webp)
+![Cartoon image of people standing in a waiting queue](./images/queue_intro.webp)
 
 # Queues
 
@@ -31,7 +31,7 @@ Way back when printers were prohibitively expensive, it was common practice for 
 to all share the same printer. The printer would end up receiving tons of print job requests,
 so it would organize these requests into a queue to methodically print every request.
 
-![Illustration depicting how a printer queue works](../images/printer_queue.png)
+![Illustration depicting how a printer queue works](./images/printer_queue.png)
 Personal printers may be much easier to purchase nowadays, but it still accomplishes all its
 printing tasks by starting with the request that was received first, then the second request,
 followed by the third request, and so on.
@@ -53,7 +53,7 @@ C, C++, and Java. Even though the actual implementation details vary based on wh
 
 In Python, queues are **implemented using lists**:
 
-![example of a queue object in Python being instantiated using a list](../images/queue_instantiate.png)
+![example of a queue object in Python being instantiated using a list](./images/queue_instantiate.png)
 
 Lists in Python are **dynamic arrays**.
 

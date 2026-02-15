@@ -41,7 +41,7 @@ The total **height** of a binary search tree can be found by counting up the num
 
 One binary search tree also contains **subtrees**. A subtree consists of one parent node and all its child nodes. A subtree can have a height that's larger than 1. Keep in mind when  finding the subtree height that its parent node would be considered its root, so it represents level 0.
 
-![Image of Binary Tree Components](../images/treeComponents.png)
+![Image of Binary Tree Components](./images/treeComponents.png)
 
 ### Node Placement
 A binary sort tree determines where the node of a new element will be placed by first comparing the value of the new element to the value found in the root node. If it is less than the node, then it will be placed in the left subtree. If it is greater than the node, then it will be placed in the right subtree. If the tree allows duplicate values, then any equivalent values can be placed in either the left or the right subtree according to the specifics set forth in the binary sorting algorithm. 
@@ -52,9 +52,9 @@ If the root node already contains a child node in the subtree position intended 
 * Start at the root node containing 44. 36 is the smaller value, so it moves to the left subtree.
 * Compare 36 with the parent node of the left subtree, which contains 26. 36 is the larger value, so it moves to the right subtree.
 * Compare 36 with the parent node of the right subtree, which contains 34. 36 is the larger value, so it moves to the right subtree.
-![Node Placement Example](../images/nodePlacement.png)
+![Node Placement Example](./images/nodePlacement.png)
 * Compare 36 with the partial leaf node, which contains 40. 36 is less than 40, and since there is no left-hand side child node, the node containing 36 will be placed in that position:
-![After Node Placement Example](../images/nodePlacement_after.png)
+![After Node Placement Example](./images/nodePlacement_after.png)
 
 ### Performance
 The binary search is able to sort data in **O log(n) time**, so its efficiency actually *increases* as the input size increases. This occurs because the data always gets split in half, so significantly large inputs simply result in significant amounts of data exclusion as well.
@@ -70,4 +70,4 @@ You can **check if a tree is unbalanced** by following these simple steps:
 3. Check the difference between both heights. If it is greater than 1, then the tree is unbalanced.
 
 The left subtree under the 20 parent node has a height of 1, while the right subtree has a height of 3. This difference of 2 makes the tree unbalanced. and right subtrees at the parent node containing 20,
-![Image of unbalanced tree](../images/unbalancedTree.png)
+![Image of unbalanced tree](./images/unbalancedTree.png)
