@@ -1,12 +1,13 @@
 ---
-title: Trees
+title: Diving into Data Structures with Python
+subtitle: Trees
 ---
 
 <nav class="ds-nav">
-  <a href="{{ '/' | 'index.html' }}">Queues</a>
-  <a href="{{ '/sets/' | 'sets.html' }}">Sets</a>
-  <a href="{{ '/linkedLists/' | linkedLists.html' }}">Linked Lists</a>
-  <a class="active" href="{{ '/trees/' | 'trees.html' }}">Trees</a>
+  <a href="/python_dataStructures/">Queues</a>
+  <a href="/python_dataStructures/sets.html">Sets</a>
+  <a href="/python_dataStructures/linkedLists.html">Linked Lists</a>
+  <a class="active" href="/python_dataStructures/trees.html">Trees</a>
 </nav>
 
 # Trees

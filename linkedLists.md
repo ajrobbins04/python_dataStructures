@@ -1,13 +1,13 @@
-
 ---
-title: Linked Lists
+title: Diving into Data Structures with Python
+subtitle: Linked Lists
 ---
 
 <nav class="ds-nav">
-  <a href="/index.html">Queues</a>
-  <a href="/sets.html">Sets</a>
-  <a class="active" href="/linkedLists.html">Linked Lists</a>
-  <a href="/trees.html">Trees</a>
+  <a href="/python_dataStructures/">Queues</a>
+  <a href="/python_dataStructures/sets.html">Sets</a>
+  <a class="active" href="/python_dataStructures/linkedLists.html">Linked Lists</a>
+  <a href="/python_dataStructures/trees.html">Trees</a>
 </nav>
 
 # Linked Lists
