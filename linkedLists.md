@@ -3,6 +3,13 @@
 title: Linked Lists
 ---
 
+<nav class="ds-nav">
+  <a href="/index.html">Queues</a>
+  <a href="/sets.html">Sets</a>
+  <a class="active" href="/linkedLists.html">Linked Lists</a>
+  <a href="/trees.html">Trees</a>
+</nav>
+
 # Linked Lists
 Data structures such as queues and stacks 
 **The advantages over dynamic array-based data structures include:**

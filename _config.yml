@@ -1,3 +1,9 @@
 title: Diving into Data Structures with Python
+subtitle: Written, Revised, and Refined (Several Times Over)by Amber Robbins
 theme: minima
 markdown: kramdown
+
+kramdown:
+  input: GFM
+
+permalink: pretty

@@ -3,6 +3,15 @@
 title: Sets
 ---
 
+
+<nav class="ds-nav">
+  <a href="/index.html">Queues</a>
+  <a class="active" href="/sets.html">Sets</a>
+  <a href="/linkedLists.html">Linked Lists</a>
+  <a href="/trees.html">Trees</a>
+</nav>
+
+
 ![Image of Waldo from "Where's Waldo"](./images/sets_intro.jpg)
 
 # Sets
